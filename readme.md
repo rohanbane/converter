@@ -6,7 +6,7 @@ This project is a rental service application that allows users to rent equipment
 ## Prerequisites
 
 - Node.js (v14 or above)
-- PostgreSQL
+- PostgreSQL (Server)
 - npm (v6 or above)
 
 ## Getting Started
@@ -28,6 +28,7 @@ ALTER ROLE rent_admin SET client_encoding TO 'utf8';
 ALTER ROLE rent_admin SET default_transaction_isolation TO 'read committed';
 ALTER ROLE rent_admin SET timezone TO 'UTC';
 
+-- Following commands are only for local setup; do not run following command on remote server! 
 -- Grant privileges on the database
 GRANT ALL PRIVILEGES ON DATABASE rent_a_tool TO rent_admin;
 
@@ -48,7 +49,7 @@ GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO rent_admin;
 Clone the repository and install the dependencies:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/rohanbane/rent-a-tool.git
 cd rent-a-tool
 npm install
 ```
@@ -71,15 +72,15 @@ To start the application, you can use the following npm scripts:
 
 ```bash
 npm run dev-start
-For production:
 ```
-
-### Build the TypeScript code:
+### For production:
+#### Build the TypeScript code:
 
 ```bash
 npm run build
-Start the server:
 ```
+
+#### Start the server:
 
 ```bash
 npm run start
@@ -102,6 +103,5 @@ You can verify the health of the application by accessing http://localhost:3000/
 - Update Product: PUT /products/:id
 - Delete Product: DELETE /products/:id
 
-
-### Disclaimer
+## Disclaimer
 This application is currently in development. Only the authentication and product management functionalities are implemented.
